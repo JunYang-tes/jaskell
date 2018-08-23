@@ -1,4 +1,4 @@
-import {pure} from '../applicatives.mjs'
+import {pure} from '../../applicatives.mjs'
 /**
  * pure (+) <*> [1,2] <*> [3,4]
  * //[1+,2+]

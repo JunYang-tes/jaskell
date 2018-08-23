@@ -6,9 +6,9 @@
  * fmap f (Just 2)
  */
 
-import {fmap} from '../functor'
-import {Just} from '../maybe.mjs'
-import {leaf,node} from '../tree.mjs'
+import {fmap} from '../../functor'
+import {Just} from '../../maybe.mjs'
+import {leaf,node} from '../../tree.mjs'
 
 const tree = node(
   node(leaf('abc'),leaf('efg')),

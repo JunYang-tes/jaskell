@@ -1,6 +1,5 @@
-import './list.mjs'
-import {Just,Nothing} from './maybe.mjs'
-import {mapM,filterM,join} from './monad.mjs'
+import {Just,Nothing} from '../maybe.mjs'
+import {mapM,filterM,join} from '../monad.mjs'
 function conv(c) {
   if(/\d/.test(c)) {
     return Just(c.charCodeAt(0)-48)

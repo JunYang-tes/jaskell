@@ -8,7 +8,7 @@
  * Just (a->b) <*> Just(1) 
  * Just(f)
  */
-import {pure,ap} from '../applicatives.mjs'
+import {pure,ap} from '../../applicatives.mjs'
 import util from 'util'
 
 function show(arr){

@@ -1,7 +1,7 @@
-import {node,leaf} from './tree.mjs'
-import {S,app} from './state.mjs'
-import {pure} from './applicatives.mjs'
-import {doBlock} from './monad.mjs'
+import {node,leaf} from '../tree.mjs'
+import {S,app} from '../state.mjs'
+import {pure} from '../applicatives.mjs'
+import {doBlock} from '../monad.mjs'
 
 
 const tree = node(

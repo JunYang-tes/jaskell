@@ -1,7 +1,7 @@
 import {Val} from './expr.mjs'
-import {Nothing,Just} from '../maybe.mjs'
-import {pure} from '../applicatives.mjs'
-import {join} from '../monad.mjs'
+import {Nothing,Just} from '../../maybe.mjs'
+import {pure} from '../../applicatives.mjs'
+import {join} from '../../monad.mjs'
 // num->num -> maybe num
 const safediv = n=>m=> m ===0 ? Nothing : Just(n/m)
 

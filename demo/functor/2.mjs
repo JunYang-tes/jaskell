@@ -7,8 +7,8 @@
 
  */
 
-import {fmap} from '../functor.mjs'
-import {Just} from '../maybe.mjs'
+import {fmap} from '../../functor.mjs'
+import {Just} from '../../maybe.mjs'
 const map = f => arr=>{
   if(arr.length) {
     let [head,...tial] = arr

@@ -19,7 +19,7 @@ class AP {
       this.pure = pure(this.fn)
     }
     this.pure = ap(this.pure)(functor)
-    return this;
+    return this
   }
 }
 export const ap = (ff)=>fa=> {

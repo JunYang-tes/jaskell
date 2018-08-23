@@ -1,6 +1,5 @@
-import './list.mjs'
-import {Just} from './maybe.mjs'
-import {doBlock,bind} from './monad.mjs'
+import {Just} from '../maybe.mjs'
+import {doBlock,bind} from '../monad.mjs'
 debugger;
 /**
  * do {

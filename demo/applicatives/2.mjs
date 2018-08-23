@@ -1,4 +1,4 @@
-import {Just} from '../maybe.mjs'
+import {Just} from '../../maybe.mjs'
 import {pure} from '../applicatives.mjs'
 /**
  * ap(
@@ -16,5 +16,5 @@ console.log(
   .ap(Just(1))
   .ap(Just(2))
   .ap(Just(3))
-  .pure
+  // .pure
 )

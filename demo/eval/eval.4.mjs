@@ -1,6 +1,6 @@
 import {Val} from './expr.mjs'
-import {Nothing,Just} from '../maybe.mjs'
-import {bind} from '../monad.mjs'
+import {Nothing,Just} from '../../maybe.mjs'
+import {bind} from '../../monad.mjs'
 /**
  * 
  *  bind(

@@ -1,5 +1,5 @@
-import {pure,map} from '../applicatives.mjs'
-import {leaf,node} from '../tree.mjs'
+import {pure,map} from '../../applicatives.mjs'
+import {leaf,node} from '../../tree.mjs'
 const tree = node(
   node(leaf(1),leaf(2)),
   leaf(3)

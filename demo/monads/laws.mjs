@@ -1,5 +1,5 @@
-import {bind,pure} from '../monad.mjs'
-import {Just,Maybe} from '../maybe.mjs'
+import {bind,pure} from '../../monad.mjs'
+import {Just,Maybe} from '../../maybe.mjs'
 let x = 1
 let f= a=>Just(a+1)
 console.log(

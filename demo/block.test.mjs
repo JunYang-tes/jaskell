@@ -1,7 +1,6 @@
 
-import './list.mjs'
-import {Just} from './maybe.mjs'
-import {doBlock,combine,mapM} from './monad.mjs'
+import {Just} from '../maybe.mjs'
+import {doBlock,combine,mapM} from '../monad.mjs'
 // import {S} from './state.mjs'
 
 // console.log(

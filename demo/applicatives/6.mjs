@@ -1,4 +1,4 @@
-import {ap,pure,leaf,node} from '../tree.mjs'
+import {ap,pure,leaf,node} from '../../tree.mjs'
 const tree = node(
   node(leaf(1),leaf(2)),
   node(leaf(3),leaf(4))
