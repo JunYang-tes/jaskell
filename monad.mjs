@@ -1,11 +1,24 @@
-import {append} from './applicatives.mjs'
+
   /**
    * return :: a=> F a
    * 
    * bind::Applicative m => m a -> (a-> m b) -> m b
    */
+import {TypeClass} from './type-class.mjs'
+import {applicatives} from './applicatives.mjs'
 import {Instance} from './utils.mjs'
-const monads = new Instance() 
+const monads = new TypeClass(
+  'monad',
+  applicatives,
+  [{
+    name:'pure',
+    argc:1,
+  },{
+    name:'bind',
+    argc:2,
+    instanceIndex:0
+  }]
+)
 
 export function regMonad(type,pure,bind) {
   monads.instance(type,{pure,bind})
@@ -24,15 +37,8 @@ regMonad(
     return ret
   }
 )
-export function bind(m,f){
-  const b = monads.find(m)
-  return b.bind(m)(f)
-}
-export const pure = type=>value => {
-  const b = monads.findByType(type)
-  return b.pure(value)
-}
-// M x -> M y -> (x->y-> M z)
+export const bind = monads.$bind
+export const pure = monads.$pure
 export function combine(m1,m2,f){
   return bind(m1,v1=>{
     return bind(m2,v2=>{

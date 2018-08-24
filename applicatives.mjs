@@ -4,9 +4,23 @@
    *    ap: fn 
    * }
    * */
-import {Instance} from './utils.mjs'
-import {fmap} from './functor.mjs'
-const applicatives=new Instance()
+import {curray} from './utils.mjs'
+import {functors,fmap} from './functor.mjs'
+import {TypeClass} from './type-class.mjs'
+export const applicatives=new TypeClass(
+  'Applicative',
+  functors,
+  [{
+    // pure::Applicative f=> a -> f a
+    name:'pure',
+    argc:1
+  },{
+    //(<*>)::Applicative f=> f (a->b) -> f a -> f b
+    name:'ap',
+    instanceIndex:1,
+    argc:2
+  }]
+)
 
 //模拟中缀表达式
 class AP {
@@ -22,10 +36,7 @@ class AP {
     return this
   }
 }
-export const ap = (ff)=>fa=> {
-  const {ap} = applicatives.find(fa)
-  return ap(ff)(fa)
-}
+export const ap = applicatives.$ap 
 export function regApplicative(type,pure,ap){
   applicatives.instance(
     type,
@@ -66,10 +77,9 @@ regApplicative(
 
 const arrCat = arr=>a=>[...arr,a]
 // cat:: A [a] -> A a -> A [a]
-export const append =(ma)=>a=>{
-  debugger;
+export const append =curray((ma,a)=>{
   return pure(arrCat)
     .ap(ma)
     .ap(a)
     .pure
-}
+})

@@ -1,18 +1,24 @@
-import {Instance} from './utils.mjs'
-const functors = new Instance()
+import {TypeClass} from './type-class.mjs'
+export const functors = new TypeClass(
+  'Functor',
+  null,
+  [{
+    // fmap:: Functor f => (a->b) -> f a -> f b
+    name:'fmap',
+    argc:2,
+    instanceIndex:1
+  }]
+)
+
 export function regFunctor(type,f) {
   functors.instance(
-    type,f
+    type,{
+      fmap:f
+    }
   )
 }
-export const fmap = f => fa => {
-  const map = functors.find(fa)
-  if(!map) {
-    throw new Error(`is not a functor`)
-  } else {
-    return map(f)(fa)
-  }
-}
+
+export const fmap = functors.$fmap
 
 regFunctor(Array,
   f=>arr=>arr.map(f)

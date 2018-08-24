@@ -17,7 +17,8 @@ const tree = node(
 const length = str=>str.length
 
 console.log(
-  fmap(length)(tree)
+  // it's a curray function
+  fmap(length,tree)
 )
 
 console.log(
